@@ -7,8 +7,7 @@
 
 ![image](https://github.com/user-attachments/assets/14d2f016-6419-42db-b7bd-794a6b77e66f)
 
-1. Add PostgreSQL to PATH    (C:\Program Files\PostgreSQL\17\bin)
-2. ![image](https://github.com/user-attachments/assets/05253eab-7e58-4c65-80ac-98ac4a4fdb29)
+
 3. ![image](https://github.com/user-attachments/assets/9d854bd0-4246-4c7b-96de-2269ec30d0ce)
 4. Use Pg_dump command to download DB ,  pg_dump -U postgres -h localhost -F c -b -v -f "C:\backup\mydb.backup" postgres
 5. ![image](https://github.com/user-attachments/assets/a218b0c1-2905-4f0c-b4f1-b2e680794850)
