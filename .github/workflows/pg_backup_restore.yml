@@ -18,7 +18,7 @@ jobs:
 
       - name: Restore PostgreSQL Backup
         run: |
-          & "C:\Program Files\PostgreSQL\17\bin\pg_restore.exe" -U sonar -h localhost -d sonarqubebackup -v "C:\temp\mydb.backup"
+          & "C:\Program Files\PostgreSQL\17\bin\pg_dump.exe"  -U postgres -h localhost -F c -b -v -f "C:\temp\abc.dump" postgres
         shell: powershell
         env:
           PGPASSWORD: ${{ secrets.PG_PASSWORD }}
