@@ -5,18 +5,12 @@ on:
   workflow_dispatch:  # Manual trigger from GitHub UI
 
 jobs:
-  restore-db:
+  backup-db:
     runs-on: self-hosted
 
     steps:
       - name: Checkout Code (Optional)
         uses: actions/checkout@v3
-
-   #   - name: Install PostgreSQL Tools (if needed)
-     #   run: |
-   #       choco install postgresql --no-progress
-    #    shell: powershell
-
       - name: Backup SonarQube Database in  PostgreSQL Backup
         run: |
           $timestamp = Get-Date -Format "yyyyMMddHHmmss"
