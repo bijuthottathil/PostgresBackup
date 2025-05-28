@@ -13,14 +13,14 @@ jobs:
       SRC_PG_HOST: localhost
       SRC_PG_PORT: 5432
       SRC_PG_USER: postgres
-      SRC_PG_PASSWORD: yoursourcepassword
-      SRC_PG_DATABASE: source_db
+      SRC_PG_PASSWORD: postgres
+      SRC_PG_DATABASE: postgres
 
       TARGET_PG_HOST: localhost
       TARGET_PG_PORT: 5433
-      TARGET_PG_USER: postgres
-      TARGET_PG_PASSWORD: yourtargetpassword
-      TARGET_PG_DATABASE: target_db
+      TARGET_PG_USER: sonar
+      TARGET_PG_PASSWORD: sonar
+      TARGET_PG_DATABASE: sonarqubebackup
 
     steps:
       - name: Install PostgreSQL client (if needed)
