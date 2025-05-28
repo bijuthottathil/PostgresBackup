@@ -19,3 +19,17 @@
 9. Executed pg_restore command ![image](https://github.com/user-attachments/assets/b09d4a3c-e946-40df-8b4b-f6e9230cc4f7)
 
 10. Database is restored in new DB![image](https://github.com/user-attachments/assets/de6a5850-e6e6-4000-bf6d-dc03fb60f8c3)
+
+# Setting up Gitaction Cron job for regular backup activity
+
+1. Setup selfhosted runner to execute gitaction against database running in local machine   ![image](https://github.com/user-attachments/assets/9610aeb8-e59d-4dc1-b3d4-29e3cedad7cf)
+2. Follow these steps  ![image](https://github.com/user-attachments/assets/21e45fef-a44f-43a9-928d-e473559ab93f)  ![image](https://github.com/user-attachments/assets/91f16ab5-1c89-4e66-b79b-f684e31d0f56)
+3. ![image](https://github.com/user-attachments/assets/2d67bb9a-84f5-4145-af61-aae6c745a72e)
+4. ![image](https://github.com/user-attachments/assets/4affbf56-4a3a-4439-99b5-cdb8fc087b23)
+5. ![image](https://github.com/user-attachments/assets/a4d1e807-d836-41c9-b6bc-53bd7fa14e48)
+6. Selfhost runner is working fine
+7. 
+
+
+
+
