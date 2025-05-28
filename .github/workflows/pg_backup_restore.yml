@@ -1,0 +1,40 @@
+name: Local Postgres Backup and Restore
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Every day at 3 AM UTC
+  workflow_dispatch:
+
+jobs:
+  backup-restore:
+    runs-on: self-hosted
+
+    env:
+      SRC_PG_HOST: localhost
+      SRC_PG_PORT: 5432
+      SRC_PG_USER: postgres
+      SRC_PG_PASSWORD: yoursourcepassword
+      SRC_PG_DATABASE: source_db
+
+      TARGET_PG_HOST: localhost
+      TARGET_PG_PORT: 5433
+      TARGET_PG_USER: postgres
+      TARGET_PG_PASSWORD: yourtargetpassword
+      TARGET_PG_DATABASE: target_db
+
+    steps:
+      - name: Install PostgreSQL client (if needed)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+      - name: Dump Source PostgreSQL DB
+        run: |
+          export PGPASSWORD=$SRC_PG_PASSWORD
+          pg_dump -h $SRC_PG_HOST -p $SRC_PG_PORT -U $SRC_PG_USER -d $SRC_PG_DATABASE -Fc -f /tmp/backup.dump
+          ls -lh /tmp/backup.dump
+
+      - name: Restore to Target PostgreSQL DB
+        run: |
+          export PGPASSWORD=$TARGET_PG_PASSWORD
+          pg_restore -h $TARGET_PG_HOST -p $TARGET_PG_PORT -U $TARGET_PG_USER -d $TARGET_PG_DATABASE --clean --if-exists /tmp/backup.dump
