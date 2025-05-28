@@ -33,9 +33,7 @@ jobs:
           Remove-Item "$env:TEMP\pwsh.msi"
           echo "✅ PowerShell $pwshVersion installed successfully."
 
-      - name: Verify PowerShell Version
-        run: |
-          & "C:\Program Files\PowerShell\7\pwsh.exe" -Command '$PSVersionTable'
+
  #     - name: Install PostgreSQL client (if needed)
  #       run: |
  #         sudo apt-get update
