@@ -1,44 +1,24 @@
-name: Local Postgres Backup and Restore
+name: PostgreSQL Restore (Local)
 
 on:
-#  schedule:
-#    - cron: '0 3 * * *'  # Every day at 3 AM UTC
-  workflow_dispatch:
+  workflow_dispatch:  # Manual trigger from GitHub UI
 
 jobs:
-  backup-restore:
+  restore-db:
     runs-on: self-hosted
 
-    env:
-      SRC_PG_HOST: localhost
-      SRC_PG_PORT: 5432
-      SRC_PG_USER: postgres
-      SRC_PG_PASSWORD: postgres
-      SRC_PG_DATABASE: postgres
-
-      TARGET_PG_HOST: localhost
-      TARGET_PG_PORT: 5433
-      TARGET_PG_USER: sonar
-      TARGET_PG_PASSWORD: sonar
-      TARGET_PG_DATABASE: sonarqubebackup
-    
     steps:
-      - name: Install PowerShell Core (7.x)
+      - name: Checkout Code (Optional)
+        uses: actions/checkout@v3
+
+   #   - name: Install PostgreSQL Tools (if needed)
+     #   run: |
+   #       choco install postgresql --no-progress
+    #    shell: powershell
+
+      - name: Restore PostgreSQL Backup
         run: |
-          $ErrorActionPreference = 'Stop'
-          $pwshVersion = '7.4.1'
-          $pwshInstaller = "https://github.com/PowerShell/PowerShell/releases/download/v$pwshVersion/PowerShell-$pwshVersion-win-x64.msi"
-          Invoke-WebRequest -Uri $pwshInstaller -OutFile "$env:TEMP\pwsh.msi"
-          Start-Process msiexec.exe -Wait -ArgumentList "/i $env:TEMP\pwsh.msi /quiet /norestart"
-          Remove-Item "$env:TEMP\pwsh.msi"
-          echo "✅ PowerShell $pwshVersion installed successfully."
-
-
- #     - name: Install PostgreSQL client (if needed)
- #       run: |
- #         sudo apt-get update
-  #        sudo apt-get install -y postgresql-client
-
-
-      - name: Run PowerShell Backup Script
-        run:  pwsh -File ./backup-restore.ps1
+          & "C:\Program Files\PostgreSQL\17\bin\pg_restore.exe" -U sonar -h localhost -d sonarqubebackup -v "C:\temp\mydb.backup"
+        shell: powershell
+        env:
+          PGPASSWORD: ${{ secrets.PG_PASSWORD }}
