@@ -41,4 +41,4 @@ jobs:
 
 
       - name: Run PowerShell Backup Script
-        run: powershell.exe -ExecutionPolicy Bypass -File .\backup-restore.ps1
+        run: powershell.exe -ExecutionPolicy Bypass -File backup-restore.ps1
