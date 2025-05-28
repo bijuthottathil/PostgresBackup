@@ -1,5 +1,6 @@
-# Taking backup of sonarqube postgress data and restoring in a backup database using GitActions
-![image](https://github.com/user-attachments/assets/7d7b3800-2e41-43cb-90b8-ad9e02287b3d)
+# Taking backup of sonarqube postgress data and restoring in a backup database using GitActions  
+![image](https://github.com/user-attachments/assets/65551a9d-0880-42b3-89d7-e8d39dfe472e)
+
 
 
 21 Sonarqube related tables are available in Postgres DB setup in local windows machine
