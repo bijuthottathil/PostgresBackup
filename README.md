@@ -28,7 +28,8 @@
 4. ![image](https://github.com/user-attachments/assets/4affbf56-4a3a-4439-99b5-cdb8fc087b23)
 5. ![image](https://github.com/user-attachments/assets/a4d1e807-d836-41c9-b6bc-53bd7fa14e48)
 6. Selfhost runner is working fine
-7. 
+7. Next step is to add gitaction file to automate backup process
+
 
 
 
