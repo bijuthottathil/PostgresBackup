@@ -21,8 +21,21 @@ jobs:
       TARGET_PG_USER: sonar
       TARGET_PG_PASSWORD: sonar
       TARGET_PG_DATABASE: sonarqubebackup
-
+    
     steps:
+      - name: Install PowerShell Core (7.x)
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $pwshVersion = '7.4.1'
+          $pwshInstaller = "https://github.com/PowerShell/PowerShell/releases/download/v$pwshVersion/PowerShell-$pwshVersion-win-x64.msi"
+          Invoke-WebRequest -Uri $pwshInstaller -OutFile "$env:TEMP\pwsh.msi"
+          Start-Process msiexec.exe -Wait -ArgumentList "/i $env:TEMP\pwsh.msi /quiet /norestart"
+          Remove-Item "$env:TEMP\pwsh.msi"
+          echo "✅ PowerShell $pwshVersion installed successfully."
+
+      - name: Verify PowerShell Version
+        run: |
+          & "C:\Program Files\PowerShell\7\pwsh.exe" -Command '$PSVersionTable'
  #     - name: Install PostgreSQL client (if needed)
  #       run: |
  #         sudo apt-get update
