@@ -29,6 +29,17 @@
 5. ![image](https://github.com/user-attachments/assets/a4d1e807-d836-41c9-b6bc-53bd7fa14e48)
 6. Selfhost runner is working fine
 7. Next step is to add gitaction file to automate backup process
+8. Created gitaction to take backup  ![image](https://github.com/user-attachments/assets/670493fd-0fac-467b-b3cf-15559eb4cd78)
+9. Manually execute the workflow   ![image](https://github.com/user-attachments/assets/c9cd60a0-680e-4737-9617-fbf90dcd00e3)
+10. ![image](https://github.com/user-attachments/assets/688d84e7-4430-47a9-8382-0c77795453c8)
+11. You can see all table data copying while running action script   ![image](https://github.com/user-attachments/assets/9547e34b-886e-4e32-bbba-f14c2c0b6c76)
+12. Job is successful  ![image](https://github.com/user-attachments/assets/21c67b44-47bb-4b91-ac7f-64ce0523376d)
+13. You can see backup file is stored in c:\temp folder  ![image](https://github.com/user-attachments/assets/0f3f482b-d8e1-4636-b8f3-9f25d1d87eff)
+
+
+
+
+
 
 
 
