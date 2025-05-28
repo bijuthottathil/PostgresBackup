@@ -1,4 +1,4 @@
-name: PostgreSQL Restore (Local)
+name: PostgreSQL Backup (Local)
 
 on:
   workflow_dispatch:  # Manual trigger from GitHub UI
@@ -18,7 +18,7 @@ jobs:
 
       - name: Restore PostgreSQL Backup
         run: |
-          & "C:\Program Files\PostgreSQL\17\bin\pg_dump.exe"  -U postgres -h localhost -F c -b -v -f "C:\temp\abc.dump" postgres
+          & "C:\Program Files\PostgreSQL\17\bin\pg_dump.exe"  -U postgres -h localhost -F c -b -v -f "C:\temp\sonarqubebackup.dump" postgres
         shell: powershell
         env:
           PGPASSWORD: ${{ secrets.PG_PASSWORD }}
