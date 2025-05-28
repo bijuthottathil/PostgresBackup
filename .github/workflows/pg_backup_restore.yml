@@ -17,7 +17,7 @@ jobs:
    #       choco install postgresql --no-progress
     #    shell: powershell
 
-      - name: Restore PostgreSQL Backup
+      - name: Backup SonarQube Database in  PostgreSQL Backup
         run: |
           $timestamp = Get-Date -Format "yyyyMMddHHmmss"
           $backupFile = "C:\temp\pg_backup_$timestamp.dump"
