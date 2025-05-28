@@ -1,8 +1,8 @@
 name: Local Postgres Backup and Restore
 
 on:
-  schedule:
-    - cron: '0 3 * * *'  # Every day at 3 AM UTC
+#  schedule:
+#    - cron: '0 3 * * *'  # Every day at 3 AM UTC
   workflow_dispatch:
 
 jobs:
